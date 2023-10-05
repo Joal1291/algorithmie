@@ -1,2 +1,2 @@
-# algorithmie
+# Algorithmie
 Exercice d'algorithmie
