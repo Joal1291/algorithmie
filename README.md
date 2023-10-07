@@ -7,6 +7,6 @@ Exercice d'algorithmie
 |2|Do a multiplication of two number|||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|[Here](https://github.com/Joal1291/algorithmie/blob/main/php/exercice2.php)|
 |3|Exchange two value||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Here](https://github.com/Joal1291/algorithmie/blob/main/python/exercice3.py)|
 |4|Display if a number is odd or even.|<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|||[Here](https://github.com/Joal1291/algorithmie/blob/main/javascript/exercice4.js)|
-|5||||||
+|5|Display the biger number out of three|||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|[Here](https://github.com/Joal1291/algorithmie/blob/main/php/exercice5.php)|
 |6||||||
 |7||||||
