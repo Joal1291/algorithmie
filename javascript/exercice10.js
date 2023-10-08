@@ -1,3 +1,5 @@
+// afficher le prix final sachant que les taxe sont a 20%
+// la reduction est de 15% si le prix TTC est de plus de 200euros
 function price(nbr1){
     let prixHt = nbr1;
     let pourcentageTaxe = 20;
