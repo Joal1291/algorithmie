@@ -5,7 +5,7 @@
 function sayHello(int $nbr){
     $i = 0;
     while($i < $nbr){
-        print("Hello!\n");
+        echo "Hello!\n";
         $i++;
     }
 }
