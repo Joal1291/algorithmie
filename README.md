@@ -28,7 +28,7 @@ Exercice d'algorithmie
 |17|Write the indexOf function|<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|||[Here](https://github.com/Joal1291/algorithmie/blob/main/javascript/exercice17.js)|
 |18|Taking two array make them one and sort it||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Here](https://github.com/Joal1291/algorithmie/blob/main/python/exercice18.py)|
 |19|Display array sort by the bubble sort technique|<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|||[Here](https://github.com/Joal1291/algorithmie/blob/main/javascript/exercice19.js)|
-|20|||||[Here]()|
+|20|Palindrome?||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Here](https://github.com/Joal1291/algorithmie/blob/main/python/exercice20.py)|
 |21|||||[Here]()|
 |22|||||[Here]()|
 |23|||||[Here]()|
