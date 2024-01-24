@@ -1,9 +1,9 @@
 # Algorithmie
 Exercice d'algorithmie
 
-|Débutant|Intermédiaire|||||
+|Débutant|Intermédiaire|Advent of Code 2023||||
 |:-|:-|:-|:-|:-|:-|
-|1-16|17-...|||||
+|1-16|17-21|22-...||||
 
 
 
