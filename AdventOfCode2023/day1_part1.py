@@ -1,5 +1,6 @@
 import openfile 
 
+filename = "day1_part1.txt"
 
 def sumNumberInAWord(array):
     # variable de récupération des tout les digits dans un mot
@@ -21,4 +22,4 @@ def sumNumberInAWord(array):
     
     print(result_to_return)
 
-sumNumberInAWord(openfile.readFile())
+sumNumberInAWord(openfile.readFile(filename))

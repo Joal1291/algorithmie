@@ -1,11 +1,9 @@
 path = "C:/Users/jordy/Documents/Code/algorithmie/AdventOfCode2023/"
-file = "day1_part1.txt"
 
-
-def readFile():
-    fichier = open(path+file, 'r')
+def readFile(filename: str):
+    fichier = open(path+filename, 'r')
     words = []
     for line in fichier:
         words.extend(line.strip().split())
+    # print(words)
     return words
-readFile()
