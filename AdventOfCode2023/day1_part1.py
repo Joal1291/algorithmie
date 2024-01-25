@@ -1,6 +1,6 @@
 import openfile 
 
-filename = "day1_part1.txt"
+filename = "day1.txt"
 
 def sumNumberInAWord(array):
     # variable de récupération des tout les digits dans un mot

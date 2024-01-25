@@ -1,6 +1,6 @@
 import openfile
 
-filename = "day1_part2.txt"
+filename = "day1.txt"
 exerciceArray = openfile.readFile(filename)
 
 arraytest = [
