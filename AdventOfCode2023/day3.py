@@ -4,16 +4,17 @@ filename = "day3.txt"
 exerciceFile = openfile.readFile(filename)
 
 arrayTest = [
-"467..114..",
-"...*......",
-"..35..633.",
-"......#...",
-"617*......",
-".....+.58.",
-"..592.....",
-"......755.",
-"...$.*....",
-".664.598.."
+"467..114...............................................",
+"...*...................................................",
+"..35..633..............................................",
+"......#................................................",
+"617*...................................................",
+".....+.58..............................................",
+"..592..................................................",
+"......755..............................................",
+"...$.*.................................................",
+".664.598...............................................",
+
 ]
 
 
@@ -35,10 +36,8 @@ arrayTest = [
 ######################################################################
 
 #Varriable
-width = len(exerciceFile[0])
-height = len(exerciceFile)
 notSymb = ".123456789"
-value = 0
+
 #Matrice
 # check = [[0 for row in range(height)]for col in range(width)]
 
@@ -54,6 +53,8 @@ def calculateSumOfNumber(array):
 def numberValidation(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
+    height = len(array)
+    width = len(array[0])
     #Digonale haut gauche
     if str(array[(row-1)%height][(col-1%width)]) not in notSymb:
         return True
@@ -83,6 +84,7 @@ def numberValidation(lineindex, nbrindex, array):
 def thereIsSymb(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
+    width = len(array[0])
     if str(array[row][(col+1)%width]) not in notSymb:
         return True
     return False
@@ -90,6 +92,7 @@ def thereIsSymb(lineindex, nbrindex, array):
 def thereIsDot(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
+    width = len(array[0])
     if str(array[row][(col+1)%width]) == ".":
         return True
     return False
@@ -99,11 +102,11 @@ def main(array):
     validation = False
     number = ""
 
-    for row in range(height):
-        print("\n-------------------------------- ", row)
-        for col in range(width):
+    for row in range(len(array)):
+        print("\n-------- row: ", row)
+        for col in range(len(array[0])):
+            print("column: ", col)
             char = array[row][col]
-            print(col)
             if char.isdigit():
                 number += char
                 if numberValidation(row, col, array):
@@ -119,8 +122,6 @@ def main(array):
                     arrayOfNumber.append(number)
                     number = ""
                     validation = False
-    # print(arrayOfNumber)
     print('Result:', calculateSumOfNumber(arrayOfNumber))
 
 main(exerciceFile) 
-# print(exerciceFile)
