@@ -32,7 +32,7 @@ Exercice d'algorithmie
 |21|display an array with all the whole number between 1 and n integer|<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>|||[Here](https://github.com/Joal1291/algorithmie/blob/main/javascript/exercice21.js)|
 |22|Day 1 --> [source](https://adventofcode.com/2023/day/1)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day1_part1.py) / [Part 2](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day1_part2.py)|
 |23|Day 2 --> [source](https://adventofcode.com/2023/day/2)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1 and 2](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day2.py)|
-|24|||||[Here]()|
+|24|Day 3 ---> [source](https://adventofcode.com/2023/day/3)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[In Process](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day3.py)|
 |25|||||[Here]()|
 |26|||||[Here]()|
 |27|||||[Here]()|
