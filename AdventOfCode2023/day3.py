@@ -54,30 +54,30 @@ def numberValidation(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
     height = len(array)
-    width = len(array[0])
+    width = len(array[row])
     #Digonale haut gauche
-    if str(array[(row-1)%height][(col-1%width)]) not in notSymb:
+    if str(array[(row-1)%height][(col-1)%width]) not in notSymb:
         return True
     #Haut
     if str(array[(row-1)%height][col]) not in notSymb:
         return True
     #Diagonal haut droite
-    if str(array[(row-1)%height][(col+1%width)]) not in notSymb:
+    if str(array[(row-1)%height][(col+1)%width]) not in notSymb:
         return True
     #Droite
-    if str(array[row][(col-1%width)]) not in notSymb:
-        return True
+    # if str(array[row][(col-1)%width]) not in notSymb:
+    #     return True
     #Diagonal bas droite
-    if str(array[(row+1)%height][(col+1%width)]) not in notSymb:
+    if str(array[(row+1)%height][(col+1)%width]) not in notSymb:
         return True
     #Bas
     if str(array[(row+1)%height][col]) not in notSymb:
         return True
     #Diagonal bas gauche
-    if str(array[(row+1)%height][(col-1%width)]) not in notSymb:
+    if str(array[(row+1)%height][(col-1)%width]) not in notSymb:
         return True
     #Gauche
-    if str(array[row][(col-1%width)]) not in notSymb:
+    if str(array[row][(col-1)%width]) not in notSymb:
         return True
     return False
 
@@ -101,11 +101,9 @@ def main(array):
     arrayOfNumber = []
     validation = False
     number = ""
-
+    
     for row in range(len(array)):
-        print("\n-------- row: ", row)
         for col in range(len(array[0])):
-            print("column: ", col)
             char = array[row][col]
             if char.isdigit():
                 number += char
@@ -116,12 +114,14 @@ def main(array):
                         arrayOfNumber.append(number)
                         number = ""
                         validation = False
-                    else:
+                    elif not validation:
                         number = ""
+                        validation = False
                 if thereIsSymb(row, col, array):
                     arrayOfNumber.append(number)
-                    number = ""
                     validation = False
+                    number = ""
     print('Result:', calculateSumOfNumber(arrayOfNumber))
 
 main(exerciceFile) 
+# print(exerciceFile)
