@@ -36,20 +36,13 @@ arrayTest = [
 ######################################################################
 
 #Varriable
-notSymb = ".123456789"
-
-#Matrice
-# check = [[0 for row in range(height)]for col in range(width)]
+notSymb = ".1234567890"
 
 ######################################################################
 #                     Function pour la partie 1                      #
 ######################################################################
-def calculateSumOfNumber(array):
-    result = 0
-    for i in array:
-        result += int(i)
-    return result
 
+## Fonction permettant de pouvoir valider un chiffre, a savoir si il y a un symbole au tour.
 def numberValidation(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
@@ -57,6 +50,8 @@ def numberValidation(lineindex, nbrindex, array):
     width = len(array[row])
     #Digonale haut gauche
     if str(array[(row-1)%height][(col-1)%width]) not in notSymb:
+        print(str(array[(row-1)%height][(col-1)%width]))
+        print(array[row][col], "\n---------------------")
         return True
     #Haut
     if str(array[(row-1)%height][col]) not in notSymb:
@@ -64,9 +59,6 @@ def numberValidation(lineindex, nbrindex, array):
     #Diagonal haut droite
     if str(array[(row-1)%height][(col+1)%width]) not in notSymb:
         return True
-    #Droite
-    # if str(array[row][(col-1)%width]) not in notSymb:
-    #     return True
     #Diagonal bas droite
     if str(array[(row+1)%height][(col+1)%width]) not in notSymb:
         return True
@@ -81,6 +73,8 @@ def numberValidation(lineindex, nbrindex, array):
         return True
     return False
 
+## Fonction qui permet de determiner si le caractere a la suite est un symbole.
+## j'ai fait de fonction différente pour la verification de droite afin de gérer plus facilement les cas.
 def thereIsSymb(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
@@ -89,39 +83,43 @@ def thereIsSymb(lineindex, nbrindex, array):
         return True
     return False
 
+## Function de vrification du caractere suivant a savoir si c'est un point ou non,
 def thereIsDot(lineindex, nbrindex, array):
     row = lineindex
     col = nbrindex
-    width = len(array[0])
-    if str(array[row][(col+1)%width]) == ".":
+    width = len(array[row])
+    if col == width-1:
+        return True
+    elif str(array[row][(col+1)]) == ".":
         return True
     return False
 
+## Permet de créer les nombre a réunir pour l'addition final.
 def main(array):
     arrayOfNumber = []
     validation = False
     number = ""
     
-    for row in range(len(array)):
-        for col in range(len(array[0])):
+    for row in range(0, len(array)):
+        for col in range(0, len(array[row])):
             char = array[row][col]
             if char.isdigit():
                 number += char
-                if numberValidation(row, col, array):
-                    validation = True
+                if validation != True:
+                    if numberValidation(row, col, array):
+                        validation = True
+                if thereIsSymb(row, col, array):
+                    arrayOfNumber.append(number)
+                    number = ""
                 if thereIsDot(row, col, array):
                     if validation == True:
                         arrayOfNumber.append(number)
                         number = ""
                         validation = False
-                    elif not validation:
+                    if validation == False:
                         number = ""
-                        validation = False
-                if thereIsSymb(row, col, array):
-                    arrayOfNumber.append(number)
-                    validation = False
-                    number = ""
-    print('Result:', calculateSumOfNumber(arrayOfNumber))
+    print('Result:', sum(int(i) for i in arrayOfNumber))
 
-main(exerciceFile) 
+# main(arrayTest) 
+main(exerciceFile)
 # print(exerciceFile)
