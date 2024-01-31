@@ -1,7 +1,21 @@
 import openfile
-
+import cProfile
 filename = "day4.txt"
 exerciceFile = openfile.readFile(filename)
+
+#############################################################################
+# import re
+# def part2(puzzle_input):
+#     regex = r':(.*)\|(.*)'
+#     cards = [1] * len(puzzle_input)
+#     for i, line in enumerate(puzzle_input):
+#         win_nums, actual_nums = re.findall(regex, line)[0]
+#         overlap = set(win_nums.split()) & set(actual_nums.split())
+#         for j in range(len(overlap)):
+#             cards[i+j+1] += cards[i]
+#     print(sum(cards))
+# part2(exerciceFile)
+#############################################################################
 
 arrayTest = [
 "Card 1: 41 48 83 86 17 | 83 86  6 31 17  9 48 53",
@@ -44,14 +58,15 @@ def transformArray(array):
     for line in array:
         cards = line.split(':')
         numbers = cards[1].split('|')
-        newArray.append(numbers)
+        newArray.append([numbers[0], numbers[1], 1])
     return newArray
 
+newarray = transformArray(exerciceFile)
 #######################################################################
 #                               Part 1                                #
 #######################################################################
 
-def main(array):
+def main1(array):
     arrayToInterprete = transformArray(array)
     first = True
     result = 0
@@ -72,33 +87,28 @@ def main(array):
         result += resBuffer
     print("Result :", result)
 
-# main(exerciceFile)
-
 #######################################################################
 #                               Part 2                                #
 #######################################################################
 
-def main(array):
-    arrayToInterprete = transformArray(array)
-    result = 0
+def main2(array):
     count = 0
-    for line in arrayToInterprete:
-        playNbr = line[0].strip().split(' ')
-        winNbr = line[1].strip().split(' ')
+    for line in array:
+        playLine = line[0].split(' ')
+        winLine = line[1].split(' ')
         resBuffer = 0
-        for nbr in playNbr:
-            if nbr=="":
-                continue
-            if nbr in winNbr:
-                resBuffer +=1
-        for i in range(1, resBuffer+1):
-            arrayToInterprete[count+i].append("a")
-        count+=1
-    for line in arrayToInterprete:
-        result += line.count('a')
-        print(line.count('a'))
-
-    print("count: ", count)
-    print("Result :", result)
-
-main(exerciceFile)
+        i = 0
+        while i <line[2]:
+            for nbr in playLine:
+                if nbr == "":continue
+                if nbr in winLine:
+                    resBuffer += 1
+                    array[count +resBuffer][2] += 1
+            resBuffer = 0
+            i+=1
+        count += 1
+    finalResult = 0
+    for line in array:
+        finalResult += line[2]
+    print("Result: ", finalResult)
+main2(newarray)
