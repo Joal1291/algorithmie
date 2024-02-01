@@ -60,8 +60,8 @@ def transformArray(array):
         numbers = cards[1].split('|')
         newArray.append([numbers[0], numbers[1], 1])
     return newArray
-
 newarray = transformArray(exerciceFile)
+
 #######################################################################
 #                               Part 1                                #
 #######################################################################
@@ -96,16 +96,13 @@ def main2(array):
     for playline, winLine, iterations in array:
         playLineSet = set(playline.split())
         winLineSet = set(winLine.split())
-        resBuffer = 0
         for i in range(1, iterations+1):
+            resBuffer = 0
             for nbr in playLineSet:
                 if nbr in winLineSet:
                     resBuffer += 1
-                    array[count +resBuffer][2] += 1
-            resBuffer = 0
+                    array[count + resBuffer][2] += 1
         count += 1
-    finalResult = 0
-    for line in array:
-        finalResult += line[2]
+    finalResult = sum(line[2] for line in array)
     print("Result: ", finalResult)
 main2(newarray)
