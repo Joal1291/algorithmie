@@ -93,13 +93,13 @@ def main1(array):
 
 def main2(array):
     count = 0
-    for line in array:
-        playLine = line[0].split()
-        winLine = line[1].split()
+    for playline, winLine, iterations in array:
+        playLineSet = set(playline.split())
+        winLineSet = set(winLine.split())
         resBuffer = 0
-        for i in range(line[2]):
-            for nbr in playLine:
-                if nbr in winLine:
+        for i in range(1, iterations+1):
+            for nbr in playLineSet:
+                if nbr in winLineSet:
                     resBuffer += 1
                     array[count +resBuffer][2] += 1
             resBuffer = 0
