@@ -32,5 +32,5 @@ arrayTest = [
 "56 93 4"
 ]
 
-for line in exerciceFile:
-    print(line)
+
+print(sum([(-1,1)[i=="("]for i in input()]))

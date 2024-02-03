@@ -96,7 +96,7 @@ def main2(array):
     for playline, winLine, iterations in array:
         playLineSet = set(playline.split())
         winLineSet = set(winLine.split())
-        for i in range(1, iterations+1):
+        for i in range(iterations):
             resBuffer = 0
             for nbr in playLineSet:
                 if nbr in winLineSet:
