@@ -19,6 +19,10 @@ def getInfo(array):
                 array2.append(int(i))
     return array1, array2  
 
+###################################################################
+#                          Part 1 and 2                           #
+###################################################################
+
 def main1(array):
     temps, distances = getInfo(array)
     resultat = 1
