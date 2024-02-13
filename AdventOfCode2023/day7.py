@@ -3,7 +3,6 @@ from collections import Counter # vas me permettre de compter les iteration d'un
 import openfile
 
 from collections import Counter
-from functools import cmp_to_key
 
 exercice = openfile.readFile("day7.txt")
 exerciceTest = openfile.readFile("day7test.txt")
@@ -43,22 +42,39 @@ high = []
 # valeur
 topcard ={"2": 2, "3":3, "4":4, "5":5, "6":6, "7":7, "8":8, "9":9, "T":10, "J":11, "Q":12, "K":13, "A":14}
 
+def compareMain(main, mainInArray):
+    count = 0
+    for i in mainInArray:
+        char = topcard[i]
+        mainchar = topcard[main[count]]
+        if char == mainchar :
+            count += 1
+            continue
+        elif mainchar < char:
+            return False
+        elif mainchar > char:
+            return True
+
 def storage(main, line, arrayToStoreIn):
+
     if len(arrayToStoreIn) == 0: 
         arrayToStoreIn.insert(0, line)
         return
-    for lines in arrayToStoreIn:
-        maintocompare = lines[0]
-        countchar = 0
-        for char in maintocompare:
-            if topcard[char] < topcard[main[countchar]]:
-                arrayToStoreIn.insert(arrayToStoreIn.index(lines)+1, line)
+    
+    else:
+        for lines in arrayToStoreIn:
+            mainInArray = lines[0]
+            index = arrayToStoreIn.index(lines)
+            check = compareMain(main, mainInArray)
+            if check and index == len(arrayToStoreIn)-1:
+                arrayToStoreIn.append(line)
                 return
-            elif topcard[char] > topcard[main[countchar]]:
-                arrayToStoreIn.insert(arrayToStoreIn.index(lines), line)
+            elif check:
+                continue
+            else: 
+                arrayToStoreIn.insert(index, line)
                 return
-            else: countchar +=1
-
+                       
 def calcul():
     res = 0
     count = 1
@@ -80,11 +96,11 @@ def findmain(array):
         paire = counter.most_common(2)
         # most_common est un methode qui permet de récuperer les paire de clef valeur d'un résultat de Counter()
         # le chiffre préciser a l'intérieur des parenthése precise le nombre de paire clef valeur que l'on veut obtenir
-        clef1, valeur1 = paire[0]
+        valeur1 = paire[0][1]
         if valeur1 == 5:
             storage(main, line, five)
             continue
-        clef2, valeur2 = paire[1]
+        valeur2 = paire[1][1]
         if valeur1 == 4:storage(main, line, four)
         elif valeur1 == 3 and valeur2 == 2:storage(main, line, fullhouse)
         elif valeur1 == 3:storage(main, line, three)
@@ -93,6 +109,5 @@ def findmain(array):
         else: storage(main, line, high)
     print("Resultat:",calcul())
 
-
-
 findmain(exercice)
+# print((1*765)+(2*220)+(3*28)+(4*483)+(5*684))
