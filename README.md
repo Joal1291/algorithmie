@@ -36,4 +36,9 @@ Exercice d'algorithmie
 |25|Day 4 ---> [source](https://adventofcode.com/2023/day/4#part2)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1 and Part 2](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day4_part1.py)|
 |26|Day 6 ---> [source](https://adventofcode.com/2023/day/6)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1 and Part 2](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day6.py)|
 |27|[Day 7](https://adventofcode.com/2023/day/7)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day7.py) / [Part 2](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day7_part2.py)|
-|28|||||[Here]()|
+|28|[Day 8](https://adventofcode.com/2023/day/8)||<p align="center" width="100%"><img width="33%" src="https://github.com/Joal1291/algorithmie/assets/144683460/9f589111-f320-4fb1-a4b3-de318e9251d9"></p>||[Part 1](https://github.com/Joal1291/algorithmie/blob/main/AdventOfCode2023/day8.py) / Part 2 In process|
+|29|||||[Here]()|
+|30|||||[Here]()|
+|31|||||[Here]()|
+|32|||||[Here]()|
+|33|||||[Here]()|
