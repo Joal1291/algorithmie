@@ -19,13 +19,8 @@ def allNextLine(line):
     arrayBuffer.insert(0,  buffer)
     if sum(buffer) != 0:
         allNextLine(buffer)
-    else:
-        for i in buffer:
-            if i == 0:
-                continue
-            else:
-                allNextLine(buffer)
-                break
+    elif max(buffer) !=0 or min(buffer) != 0:
+        allNextLine(buffer)
 
 def main(array):
     result = 0
@@ -35,7 +30,7 @@ def main(array):
         arrayBuffer.append(result_line)
         allNextLine(result_line)
         result += getResult(arrayBuffer)
-        
+
         arrayBuffer.clear()
     print("Result: ", result)
 
