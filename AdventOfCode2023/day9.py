@@ -9,11 +9,8 @@ arrayBuffer = []
 
 def getResult(array):
     value = 0
-    buf = []
     for lines in array:
-        buf.append(int(lines[-1:][0]))
-    for i in range(1, len(buf)):
-            value = buf[i] + value
+        value += int(lines[-1:][0])
     return value
 
 def allNextLine(line):
@@ -27,7 +24,7 @@ def allNextLine(line):
 def main(array):
     result = 0
     for lines in array:
-        line = lines.split()
+        line = lines.split(" ")
         arrayBuffer.append(line)
         allNextLine(line)
         result += getResult(arrayBuffer)
