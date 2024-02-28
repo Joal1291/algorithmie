@@ -26,35 +26,45 @@ def addMove(array, line, index):
     if line != len(array)-1:char_down = array[line+1][index]
     if index != 0:char_left = array[line][index-1]
     
-    if char_up in '|7F' and actualchar in '|JLS' and (char_up, line-1, index) not in moves:
-        moves.append((char_up, line-1, index))
-        return char_up, line-1, index
-    elif char_right in '-7J' and actualchar in '-LFS' and (char_right, line, index+1) not in moves:
-        moves.append((char_right, line, index+1))
-        return char_right, line, index+1
-    elif char_down in '|JL' and actualchar in '|7FS' and (char_down, line+1, index) not in moves:
-        moves.append((char_down, line+1, index))
-        return char_down, line+1, index
-    elif char_left in '-LF' and actualchar in '-7JS' and (char_left, line, index-1) not in moves:
-        moves.append((char_left, line, index-1))
-        return char_left, line, index-1
+    if char_up in '|7F' and actualchar in '|JLS' and (line-1, index) not in moves:
+        moves.append((line-1, index))
+        return True, line-1, index
+    elif char_right in '-7J' and actualchar in '-LFS' and (line, index+1) not in moves:
+        moves.append((line, index+1))
+        return True, line, index+1
+    elif char_down in '|JL' and actualchar in '|7FS' and (line+1, index) not in moves:
+        moves.append((line+1, index))
+        return True, line+1, index
+    elif char_left in '-LF' and actualchar in '-7JS' and (line, index-1) not in moves:
+        moves.append((line, index-1))
+        return True, line, index-1
     elif char_up == "S" or char_right == "S" or char_down == "S" or char_left == "S":
-        return "S", line, index
-    else:
-        print("Une putain d'erreur est survenue")
-        return "S", 0, 0 
+        return False, line, index
+
+def countCharInBoucle(array):
+    result = 0
+    d = ""
+    for count, a in enumerate(array):
+        for count2, i in enumerate(a):
+            if (count, count2) in moves:
+                d+="-"
+            else: d+= "O"
+        print(d)
+        d = ""
+    return result
 
 def main(array):
-    count = 0
     animalLine, animalIndex = findAnimal(array)
-    moves.append(("S", animalLine, animalIndex))
-    char = ""
+    moves.append((animalLine, animalIndex))
+    boolean = True
     line = animalLine
     index = animalIndex
-    while char != "S":
-        char, line, index = addMove(array, line, index)
-        count += 1
-    
-    print("Result:",int(count/2))
+    while boolean:
+        boolean, line, index = addMove(array, line, index)
+    print(f"Result of char in boucle = {countCharInBoucle(array)}")
+    print("Result =",int(len(moves)/2))
+    # print(moves)
+    # print('---------------------------------------------------------')
+    # print(movestest)
 
 main(exercice)
