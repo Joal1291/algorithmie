@@ -1,13 +1,8 @@
 import openfile
-from datetime import datetime, timedelta
 
 file = "fichier1.txt"
 
 exercice = openfile.readFile(file)
-
-finalrunner = ""
-finalcountry = ""
-finaltime = ""
 
 dico = {}
 for i in exercice: 
